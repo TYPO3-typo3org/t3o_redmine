@@ -1,0 +1,7 @@
+plugin.tx_t3o_redmine {
+	view {
+		templateRootPath = EXT:t3o_redmine/Resources/Private/Templates/
+		partialRootPath = EXT:t3o_redmine/Resources/Private/Partials/
+		layoutRootPath = EXT:t3o_redmine/Resources/Private/Layouts/
+	}
+}

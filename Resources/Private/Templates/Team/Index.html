@@ -1,0 +1,16 @@
+<div>
+	<f:for each="{groups}" as="group">
+		<f:groupedFor each="{group}" as="membersOfGroup" groupBy="role" groupKey="role">
+			<h2>{role}</h2>
+
+			<div>
+				<f:for each="{membersOfGroup}" as="member">
+					<!--TODO: use special viewhelper to get the user image-->
+					<p>Image for user {member.login} comes here</p>
+					<a href="https://forge.typo3.org/users/{member.id}" target="_blank">{member.name}</a>
+					<hr/>
+				</f:for>
+			</div>
+		</f:groupedFor>
+	</f:for>
+</div>

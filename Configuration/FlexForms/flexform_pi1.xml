@@ -1,0 +1,25 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Options</sheetTitle>
+				</TCEforms>
+				<type>string</type>
+				<el>
+					<settings.project>
+						<TCEforms>
+							<label>Project name</label>
+							<config>
+								<type>input</type>
+							</config>
+						</TCEforms>
+					</settings.project>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>
