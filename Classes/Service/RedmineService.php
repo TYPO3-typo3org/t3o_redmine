@@ -15,7 +15,7 @@ class RedmineService extends RestService {
 	 * @return array
 	 */
 	public function getMembers($projectName) {
-		$response = $this->runRequest('/projects/' . $projectName . '/memberships.json');
+		$response = $this->runRequest('/projects/' . $projectName . '/memberships.json?limit=100');
 		return $response['memberships'];
 	}
 }
