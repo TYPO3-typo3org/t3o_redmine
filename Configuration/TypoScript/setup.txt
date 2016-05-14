@@ -1,4 +1,4 @@
-plugin.tx_t3o_redmine {
+plugin.tx_t3oredmine {
 	view {
 		templateRootPath = {$plugin.tx_t3o_redmine.view.templateRootPath}
 		partialRootPath = {$plugin.tx_t3o_redmine.view.partialRootPath}
@@ -7,9 +7,9 @@ plugin.tx_t3o_redmine {
 
 	settings {
 		# Absolute path to the file that contains the apiKey
-		apiKeyPath = ''
+		apiKeyPath =
 		# Url of the redmine instance
-		url = ''
+		url = https://forge.typo3.org
 		# Id of the roles that you want to show.
 		# They will be ordered that way that they appear here
 		roleIds {

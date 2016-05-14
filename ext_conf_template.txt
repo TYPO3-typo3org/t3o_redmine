@@ -1,0 +1,2 @@
+# cat=basic/enable/60; type=string; label= API key for Redmine
+apiKey =
