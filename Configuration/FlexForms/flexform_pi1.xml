@@ -18,6 +18,15 @@
 							</config>
 						</TCEforms>
 					</settings.project>
+					<settings.apikey>
+						<TCEforms>
+							<label>Redmine API key</label>
+							<config>
+								<type>input</type>
+								<eval>password</eval>
+							</config>
+						</TCEforms>
+					</settings.apikey>
 				</el>
 			</ROOT>
 		</sDEF>

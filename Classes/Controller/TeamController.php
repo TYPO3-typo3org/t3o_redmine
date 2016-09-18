@@ -31,8 +31,7 @@ class Tx_T3oRedmine_Controller_TeamController extends Tx_Extbase_MVC_Controller_
 	 */
 	public function indexAction() {
 		$config['url'] = $this->settings['url'];
-		$extConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3o_redmine']);
-		$config['apikey'] = $extConfig['apiKey'];
+		$config['apikey'] = $this->settings['apikey'];
 
 		/** @var RedmineService $restService */
 		$restService = t3lib_div::makeInstance('RedmineService', $config);
