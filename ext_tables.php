@@ -1,17 +1,17 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY,
-	'Pi1',
-	'Forge Teams'
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    $_EXTKEY,
+    'Pi1',
+    'Forge Teams'
 );
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Forge Integration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Forge Integration');
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_t3o_redmine', 'EXT:t3o_redmine/Resources/Private/Language/locallang_csh_tx_t3o_redmine.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3o_redmine', 'EXT:t3o_redmine/Resources/Private/Language/locallang_csh_tx_t3o_redmine.xlf');
 
 /**
  * Add flexform configuration
@@ -19,7 +19,7 @@ t3lib_extMgm::addLLrefForTCAdescr('tx_t3o_redmine', 'EXT:t3o_redmine/Resources/P
 $pluginName = 'pi1';
 $pluginSignature = str_replace('_', '', $_EXTKEY) . '_' . $pluginName;
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-t3lib_extMgm::addPiFlexFormValue(
-	$pluginSignature,
-	'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_' . $pluginName . '.xml'
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    $pluginSignature,
+    'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_' . $pluginName . '.xml'
 );

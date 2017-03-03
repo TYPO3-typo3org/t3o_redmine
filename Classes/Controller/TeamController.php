@@ -1,10 +1,12 @@
 <?php
-require_once(PATH_typo3conf . '/ext/t3o_redmine/Classes/Service/RedmineService.php');
+namespace T3o\T3oRedmine\Controller;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class Tx_T3oRedmine_Controller_TeamController
  */
-class Tx_T3oRedmine_Controller_TeamController extends Tx_Extbase_MVC_Controller_ActionController {
+class TeamController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * @var array
@@ -12,7 +14,7 @@ class Tx_T3oRedmine_Controller_TeamController extends Tx_Extbase_MVC_Controller_
 	protected $allowedRoles = array();
 
 	/**
-	 * @var Tx_T3oAjaxlogin_Domain_Repository_UserRepository
+	 * @var \T3o\T3oAjaxlogin\Domain\Repository\UserRepository
 	 */
 	protected $feUserRepository = NULL;
 
@@ -23,7 +25,7 @@ class Tx_T3oRedmine_Controller_TeamController extends Tx_Extbase_MVC_Controller_
 	 */
 	public function initializeAction() {
 		$this->allowedRoles = $this->settings['roleIds'];
-		$this->feUserRepository = t3lib_div::makeInstance('Tx_T3oAjaxlogin_Domain_Repository_UserRepository');
+		$this->feUserRepository = GeneralUtility::makeInstance('\T3o\T3oAjaxlogin\Domain\Repository\UserRepository');
 	}
 
 	/**
@@ -33,8 +35,8 @@ class Tx_T3oRedmine_Controller_TeamController extends Tx_Extbase_MVC_Controller_
 		$config['url'] = $this->settings['url'];
 		$config['apikey'] = $this->settings['apikey'];
 
-		/** @var RedmineService $restService */
-		$restService = t3lib_div::makeInstance('RedmineService', $config);
+		/** @var \T3o\T3oRedmine\Service\RedmineService $restService */
+		$restService = GeneralUtility::makeInstance('\T3o\T3oRedmine\Service\RedmineService', $config);
 
 		$members = $restService->getMembers($this->settings['project']);
 		$sortedGroups = $this->filterMembers($members);

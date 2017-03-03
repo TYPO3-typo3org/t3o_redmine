@@ -1,5 +1,5 @@
 <?php
-require_once(PATH_typo3conf . '/ext/t3o_redmine/Classes/Service/RestService.php');
+namespace T3o\T3oRedmine\Service;
 
 /**
  * Class RedmineService

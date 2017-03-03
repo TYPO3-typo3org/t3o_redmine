@@ -1,18 +1,17 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::configurePlugin(
-	$_EXTKEY,
-	'Pi1',
-	array(
-		'Team' => 'index',
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'T3o.' . $_EXTKEY,
+    'Pi1',
+    array(
+        'Team' => 'index',
 
-	),
-	// non-cacheable actions
-	array(
-	)
+    ),
+    // non-cacheable actions
+    array()
 );
 
 ?>
