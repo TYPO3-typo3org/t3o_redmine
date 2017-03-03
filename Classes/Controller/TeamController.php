@@ -2,6 +2,7 @@
 namespace T3o\T3oRedmine\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository;
 
 /**
  * Class Tx_T3oRedmine_Controller_TeamController
@@ -14,9 +15,20 @@ class TeamController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	protected $allowedRoles = array();
 
 	/**
-	 * @var \T3o\T3oAjaxlogin\Domain\Repository\UserRepository
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
 	 */
 	protected $feUserRepository = NULL;
+
+    /**
+     * injectMemberRepository
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository $feUserRepository
+     * @return void
+     */
+    public function injectFeUserRepository(FrontendUserRepository $feUserRepository)
+    {
+        $this->feUserRepository = $feUserRepository;
+    }
 
 	/**
 	 * Inject settings from typoscript and FlexForm to $this->settings
@@ -25,7 +37,6 @@ class TeamController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 */
 	public function initializeAction() {
 		$this->allowedRoles = $this->settings['roleIds'];
-		$this->feUserRepository = GeneralUtility::makeInstance('\T3o\T3oAjaxlogin\Domain\Repository\UserRepository');
 	}
 
 	/**

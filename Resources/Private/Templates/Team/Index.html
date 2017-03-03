@@ -1,4 +1,4 @@
-{namespace login=Tx_T3oAjaxlogin_ViewHelpers}
+{namespace redmine=T3o\T3oRedmine\ViewHelpers}
 <div>
 	<f:for each="{groups}" as="group">
 		<f:groupedFor each="{group}" as="membersOfGroup" groupBy="role" groupKey="role">
@@ -6,7 +6,7 @@
 			<f:for each="{membersOfGroup}" as="member">
 				<p>
 					<f:if condition="{member.user}">
-						<login:userImage user="{member.user}" size="mid" alt="{member.name}" style="padding-right: 5px; float: left;" />
+						<redmine:userImage user="{member.user}" size="mid" alt="{member.name}" style="padding-right: 5px; float: left;" />
 					</f:if>
 					<a href="https://forge.typo3.org/users/{member.id}" target="_blank">{member.name}</a><br />
 					({member.login})
