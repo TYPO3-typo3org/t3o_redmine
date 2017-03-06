@@ -1,4 +1,5 @@
 <?php
+namespace T3o\T3oRedmine\Service;
 
 /**
  * Class RestService
